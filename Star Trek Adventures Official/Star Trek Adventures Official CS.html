@@ -1,1 +1,412 @@
-<!-- Insert HTML here -->
+<!-- Out here will be the wrapper that will contain the actual content of the sheet and the theme borders.
+    At present, I'm going to leave this blank so we can focus on the actual meat of the sheet.
+    My thought is that we'll initially design the sheet in a single column, plug in the functionality, and then
+    format it into the expected two column format -->
+
+<div class="sheet-content-container"><!-- The Container for the actual sheet -->
+    
+<!-- ~~~~~~~~ Character Sheet Page, default view ~~~~~~~~ -->    
+    <div class="sheet-page"><!-- This is the div class that keeps the three "pages" seperate-->
+        <!-- Character Traits Section -->
+        <header>
+            <h1>STARFLEET PERSONNEL FILE</h1>
+            <form>
+                <fieldset>
+                    <div class="attr-character-type">
+                        <label>CHARACTER TYPE: </label>
+                        <select>
+                            <option value="primary">PRIMARY</option>
+                            <option value="secondary">SECONDARY</option>
+                        </select><br />
+                    </div>
+                    <label>NAME: </label><input type="text" class="attr-name"/><br />
+                    <label>SPECIES: </label><input type="text" class="attr-species" /><br />
+                    <label>RANK: </label><input type="text" class="attr-rank"><br />
+                    <label>ENVIRONMENT: </label><input type="text" class="attr-environment" /><br />
+                    <label>UPBRINGING: </label><input type="text" class="attr-upbringing" /><br />
+                    <label>ASSIGNMENT: </label><input type="text" class="attr-assignment" /><br />
+                    <label>TRAITS: </label><input type="text" class="attr-traits" /><br /> <!-- we could have the ship and character sheet share this attribute -->
+                </fieldset>
+            </form>
+        </header><!-- End Character Traits Section -->
+        <div class="sheet-body">
+            
+            <!-- Attributes -->
+            <h2><span>ATTRIBUTES</span></h2>
+            <table>
+                <tr>
+                    <td>
+                        <label>CONTROL</label><input type="number" class="attr-control" />
+                    </td>
+                    <td>
+                        <label>FITNESS</label><input type="number" class="attr-fitness" />
+                    </td>
+                    <td>
+                        <label>PRESENCE</label><input type="number" class="attr-presence" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>DARING</label><input type="number" class="attr-daring" />
+                    </td>
+                    <td>
+                        <label>FITNESS</label><input type="number" class="attr-insight" />
+                    </td>
+                    <td>
+                        <label>PRESENCE</label><input type="number" class="attr-reason" />
+                    </td>
+                </tr>
+            </table>
+            
+            <!-- Disciplines -->
+            <h2><span>DISCIPLINES</span></h2>
+            <table>
+                <tr>
+                    <td>
+                        <label>COMMAND</label><input type="number" class="attr-command" />
+                    </td>
+                    <td>
+                        <label>SECURITY</label><input type="number" class="attr-security" />
+                    </td>
+                    <td>
+                        <label>SCIENCE</label><input type="number" class="attr-science" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>CONN</label><input type="number" class="attr-conn" />
+                    </td>
+                    <td>
+                        <label>ENGINEERING</label><input type="number" class="attr-engineering" />
+                    </td>
+                    <td>
+                        <label>MEDICINE</label><input type="number" class="attr-medicine" />
+                    </td>
+                </tr>
+            </table>
+            
+            <!-- values -->
+            <h2><span>VALUES</span></h2>
+            <input type="text" class="attr-values" />
+            <h3>DETERMINATION</h3>
+            <input type="radio" name="determination" class="attr-determination1" value="1" />
+            <input type="radio" name="determination" class="attr-determination2" value="2" />
+            <input type="radio" name="determination" class="attr-determination3" value="3" />
+            
+            <!-- weapons (repeating section)  -->
+            <h2><span>WEAPONS</span></h2>
+            <fieldset class="repeating_weapons">
+                <label>NAME/TYPE</label><input type="text" class="attr-weapon-name" />
+                <button type='roll' value="/roll @{weapon-dice}d6" name="roll-weapon-attack" value="1"></button>
+                <input type="number" class="attr-weapon-dice" /><br />
+                <label>QUALITIES</label><input type="text" class="attr-weapon-qualities" />
+            </fieldset>
+            
+            <!-- Beginning of the second column -->
+            
+            <!-- This is where the dice roller will be placed -->
+            <div class="sheet-dice-roller">
+                <h2>DICE ROLLER</h2>
+                <label>ATTRIBUTE:</label><input type="text" class="" readonly /><br />
+                <label>DISCIPLINE:</label><input type="text" class="" readonly /><br />
+                <label>TARGET:</label><input type="text" class="" readonly /><br />
+                <label>FOCUS USED:</label>
+                <label class="sheet-focus-toggle">NO</label></label><input type="radio" name="focus-toggle" class="" value="1" checked />
+                <label class="sheet-focus-toggle">YES</label><input type="radio" name="focus-toggle" class="" value="*2" /><br />
+                <button type='roll' value="/roll [insert formula here]" name="roll-weapon-attack" value="1"></button><br />
+                <label>COVER ROLL</label><button type='roll' value="/roll [insert formula here]" name="roll-dodge" value="1"></button>
+            </div>
+            
+            <!-- Focuses -->
+            <h2><span>FOCUSES</span></h2>
+            <input type="text" class="attr-focuses" />
+            
+            <!-- Stress (The # of visible bubbles depends on the score of Fitness and Security rating) -->
+            <h2><span>STRESS</span></h2>
+            <fieldset class="repeating_stress">
+                <input type="radio" class="attr-stress">
+            </fieldset>
+            
+            <!-- Injuries -->
+            <h2><span>FOCUSES</span></h2>
+            <input type="text" class="attr-injuries" />
+            
+            <!-- Other Equipment -->
+            <h2><span>FOCUSES</span></h2>
+            <input type="text" class="attr-equipment" />
+            
+        </div><!-- End of Sheet Body-->
+    
+    </div><!-- ~~~~~~~~ End of Character Sheet Page ~~~~~~~~ -->
+    
+    
+    
+    <hr />
+    
+    
+    
+    <div class="sheet-page"><!-- This is the div class that keeps the three "pages" seperate-->
+        <!-- Character Traits Section -->
+        <header>
+            <h1>STARSHIP REGISTRY ENTRY</h1>
+            <form>
+                <fieldset>
+                    <label>NAME: </label><input type="text" class="attr-name"/><br />
+                    <label>DESIGNATION: </label><input type="text" class="attr-designation" /><br />
+                    <label>SERVICE DATE: </label><input type="text" class="attr-service-date"><br />
+                    <label>SPACE FRAME: </label><input type="text" class="attr-space-frame" /><br />
+                    <label>MISSION PROFILE: </label><input type="text" class="attr-mission-profile" /><br />
+                    <label>REFIT: </label><input type="text" class="attr-refit" /><br />
+                    <label>TRAITS: </label><input type="text" class="attr-traits" /><br /> <!-- we could have the ship and character sheet share this attribute -->
+                </fieldset>
+            </form>
+        </header><!-- End Character Traits Section -->
+        <div class="sheet-body">
+            
+            <!-- Systems -->
+            <h2><span>SYSTEMS</span></h2>
+            <table>
+                <tr>
+                    <td>
+                        <label>ENGINES</label><input type="number" class="attr-engines" />
+                    </td>
+                    <td>
+                        <label>COMPUTERS</label><input type="number" class="attr-computers" />
+                    </td>
+                    <td>
+                        <label>WEAPONS</label><input type="number" class="attr-system-weapons" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h5>BREACHES</h5>
+                        <input type="radio" class="attr-engines-breach" value="1" />
+                        <input type="radio" class="attr-engines-breach" value="2" />
+                        <input type="radio" class="attr-engines-breach" value="3" />
+                        <input type="radio" class="attr-engines-breach" value="4" />
+                        <input type="radio" class="attr-engines-breach" value="5" />
+                        <input type="radio" class="attr-engines-breach" value="6" />
+                    </td>
+                    <td>
+                        <h5>BREACHES</h5>
+                        <input type="radio" class="attr-computers-breach" value="1" />
+                        <input type="radio" class="attr-computers-breach" value="2" />
+                        <input type="radio" class="attr-computers-breach" value="3" />
+                        <input type="radio" class="attr-computers-breach" value="4" />
+                        <input type="radio" class="attr-computers-breach" value="5" />
+                        <input type="radio" class="attr-computers-breach" value="6" />
+                    </td>
+                    <td>
+                        <h5>BREACHES</h5>
+                        <input type="radio" class="attr-weapons-breach" value="1" />
+                        <input type="radio" class="attr-weapons-breach" value="2" />
+                        <input type="radio" class="attr-weapons-breach" value="3" />
+                        <input type="radio" class="attr-weapons-breach" value="4" />
+                        <input type="radio" class="attr-weapons-breach" value="5" />
+                        <input type="radio" class="attr-weapons-breach" value="6" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>STRUCTURE</label><input type="number" class="attr-structure" />
+                    </td>
+                    <td>
+                        <label>SENSORS</label><input type="number" class="attr-sensors" />
+                    </td>
+                    <td>
+                        <label>COMMUNICATION</label><input type="number" class="attr-communication" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h5>BREACHES</h5>
+                        <input type="radio" class="attr-structure-breach" value="1" />
+                        <input type="radio" class="attr-structure-breach" value="2" />
+                        <input type="radio" class="attr-structure-breach" value="3" />
+                        <input type="radio" class="attr-structure-breach" value="4" />
+                        <input type="radio" class="attr-structure-breach" value="5" />
+                        <input type="radio" class="attr-structure-breach" value="6" />
+                    </td>
+                    <td>
+                        <h5>BREACHES</h5>
+                        <input type="radio" class="attr-sensors-breach" value="1" />
+                        <input type="radio" class="attr-sensors-breach" value="2" />
+                        <input type="radio" class="attr-sensors-breach" value="3" />
+                        <input type="radio" class="attr-sensors-breach" value="4" />
+                        <input type="radio" class="attr-sensors-breach" value="5" />
+                        <input type="radio" class="attr-sensors-breach" value="6" />
+                    </td>
+                    <td>
+                        <h5>BREACHES</h5>
+                        <input type="radio" class="attr-communications-breach" value="1" />
+                        <input type="radio" class="attr-communications-breach" value="2" />
+                        <input type="radio" class="attr-communications-breach" value="3" />
+                        <input type="radio" class="attr-communications-breach" value="4" />
+                        <input type="radio" class="attr-communications-breach" value="5" />
+                        <input type="radio" class="attr-communications-breach" value="6" />
+                    </td>
+                </tr>
+            </table>
+            
+            <!-- Departments -->
+                <!-- Something we need to decide is if we share the Disciplines/Departments attributes. 
+                I can't immediately see a reason for someone trying to juggle a character and a ship on the same sheet.
+                To me, it would make more sense to either have a character or a ship, not both -->
+            <h2><span>DEPARTMENTS</span></h2>
+            <table>
+                <tr>
+                    <td>
+                        <label>COMMAND</label><input type="number" class="attr-command" />
+                    </td>
+                    <td>
+                        <label>SECURITY</label><input type="number" class="attr-security" />
+                    </td>
+                    <td>
+                        <label>SCIENCE</label><input type="number" class="attr-science" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>CONN</label><input type="number" class="attr-conn" />
+                    </td>
+                    <td>
+                        <label>ENGINEERING</label><input type="number" class="attr-engineering" />
+                    </td>
+                    <td>
+                        <label>MEDICINE</label><input type="number" class="attr-medicine" />
+                    </td>
+                </tr>
+            </table>
+            
+            
+            <!-- Ship Diagram, Scale, & Resistance -->
+            <div class="sheet-ship-frame-info">
+                TNG_Ship_outline.SVG
+                <table>
+                    <tr>
+                        <td>
+                            <label>SCALE</label><input type="number" class="attr-scale" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>RESISTANCE</label><input type="number" class="attr-resistance" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <!-- Talents -->
+            <h2><span>TALENTS</span></h2>
+            <input type="text" class="attr-values" />
+            
+            <!-- Beginning of the second column -->
+            
+            <!-- This is where the dice roller will be placed -->
+            <div class="sheet-dice-roller">
+                <h2>DICE ROLLER</h2>
+                <label>SYSTEM:</label><input type="text" class="" readonly /><br />
+                <label>DEPARTMENT:</label><input type="text" class="" readonly /><br />
+                <label>TARGET:</label><input type="text" class="" readonly /><br />
+                <label>TALENT USED:</label>
+                <label class="sheet-focus-toggle">NO</label></label><input type="radio" name="focus-toggle" class="" value="1" checked />
+                <label class="sheet-focus-toggle">YES</label><input type="radio" name="focus-toggle" class="" value="*2" /><br />
+                <button type='roll' value="/roll [insert formula here]" name="roll-weapon-attack" value="1"></button><br />
+                <label>MANOUVER ROLL</label><button type='roll' value="/roll [insert formula here]" name="roll-dodge" value="1"></button>
+            </div>
+            
+            
+            <!-- Power -->
+            <h2><span>POWER</span></h2>
+            <table>
+                <tr>
+                    <td>
+                        <label>CURRENT</label><input type="number" class="attr-power" />
+                    </td>
+                    <td>
+                        <label>TOTAL</label><input type="number" class="attr-power-max" />
+                    </td>
+                    <td>
+                </tr>
+            </table>
+            
+            <!-- Shields (The # of visible bubbles depends on the score of Structure and Security rating) -->
+            <h2><span>SHIELDS</span></h2>
+            <fieldset class="repeating_stress">
+                <input type="radio" class="attr-shields">
+            </fieldset>
+            
+            <!-- Launch Bay -->
+            <h2><span>LAUNCH BAY</span></h2>
+            <input type="text" class="attr-focuses" />
+            
+            <!-- Crew Support -->
+            <h2><span>CREW SUPPORT</span></h2>
+            <table>
+                <tr>
+                    <td>
+                        <label>CURRENT</label><input type="number" class="attr-crew-support" />
+                    </td>
+                    <td>
+                        <label>TOTAL</label><input type="number" class="attr-crew-support-max" />
+                    </td>
+                    <td>
+                </tr>
+            </table>
+            
+            <!-- weapons (repeating section that mirrors the attributes section on the character sheet)  -->
+            <h2><span>WEAPONS</span></h2>
+            <fieldset class="repeating_weapons">
+                <label>NAME/TYPE</label><input type="text" class="attr-weapon-name" />
+                <button type='roll' value="/roll @{weapon-dice}d6" name="roll-weapon-attack" value="1"></button>
+                <input type="number" class="attr-weapon-dice" /><br />
+                <label>QUALITIES</label><input type="text" class="attr-weapon-qualities" />
+            </fieldset>
+            
+        </div><!-- End of Sheet Body-->
+       
+    
+    
+    <hr />
+    
+    
+    
+    <div class="sheet-page"><!--  ~~~~~~~~ Sheet Settings Page ~~~~~~~~ -->
+    <!-- This is a little floaty and unstructured at present. At present, what we need
+    available at the very least for the October rough draft is:
+        1. Switch the sheet to the ship or character version
+        2. Add extra stress bubbles to a character sheet
+        3. Add extra shields bubbles to a ship sheet
+    
+    Some other things that I can think of that we can also try to shoot for is:
+        1. Choice between several layout color palette swaps
+        2. Be able to swap from the TNG to the TOS versions of this sheet
+        3. ....
+    As the sheet begins to make shape, we can figure out what else needs to be here.-->
+    
+        <div class="sheet-header"><!-- If we Need a header for Sheet Settings-->
+        </div>
+            <h1>SHEET SETTINGS</h1>
+            <form>
+                    <fieldset>
+                        <label>SETTING1: </label><input type="text" /><br />
+                        <label>SETTING2: </label><input type="text" /><br />
+                        <label>SETTING3: </label><input type="text" /><br />
+                        <label>SETTING4: </label><input type="text" /><br />
+                    </fieldset>
+                </form>
+        </div><!-- End Sheet Settings header Section -->
+        <div class="sheet-body"><!-- If we Need a body for Sheet Settings-->
+            
+        </div>
+    </div><!--  ~~~~~~~~ End Sheet Settings Page ~~~~~~~~ -->
+       
+    
+    
+    <hr />
+    
+    
+    
+    <footer>
+        <p>&trade; &amp; &copy; 2017 CBS Studios Inc. STAR TREK and related marks and logos are trademarks of CBS Studios Inc. All Rights Reserved.</p>
+    </footer>
+</div><!--   ~~~~~~~~ End of sheet-content-container ~~~~~~~~ -->
