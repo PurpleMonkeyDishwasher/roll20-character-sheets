@@ -1,0 +1,4 @@
+/*Bootstrap has some existing styling that auto treats labels as block elements */
+label {
+    display:inline !important;
+}
