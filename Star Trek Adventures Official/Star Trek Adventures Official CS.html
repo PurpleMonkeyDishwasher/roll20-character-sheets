@@ -1,34 +1,36 @@
+<!-- ~~~~~~~~~ Star Trek: Adventures - Official Sheet by Roll20 HTML File ~~~~~~~~~ -->
+
 <!-- Out here will be the wrapper that will contain the actual content of the sheet and the theme borders.
     At present, I'm going to leave this blank so we can focus on the actual meat of the sheet.
-    My thought is that we'll initially design the sheet in a single column, plug in the functionality, style it for one column, and then
-    then format it into the expected two column format -->
+    My thought is that we'll initially design the sheet in a single column, plug in the functionality, and then
+    format it into the expected two column format -->
 
 <div class="sheet-content-container"><!-- The Container for the actual sheet -->
     
 <!-- ~~~~~~~~ Character Sheet Page, default view ~~~~~~~~ -->    
     <div class="sheet-page"><!-- This is the div class that keeps the three "pages" seperate-->
         <!-- Character Traits Section -->
-        <header>
+        <div class="sheet-div class="sheet-header"">
             <h1>STARFLEET PERSONNEL FILE</h1>
             <form>
                 <fieldset>
                     <div class="attr-character-type">
-                        <label>CHARACTER TYPE: </label>
+                        <span class="sheet-label">CHARACTER TYPE: </span>
                         <select>
                             <option value="primary">PRIMARY</option>
                             <option value="secondary">SECONDARY</option>
                         </select><br />
                     </div>
-                    <label>NAME: </label><input type="text" class="attr-name"/><br />
-                    <label>SPECIES: </label><input type="text" class="attr-species" /><br />
-                    <label>RANK: </label><input type="text" class="attr-rank"><br />
-                    <label>ENVIRONMENT: </label><input type="text" class="attr-environment" /><br />
-                    <label>UPBRINGING: </label><input type="text" class="attr-upbringing" /><br />
-                    <label>ASSIGNMENT: </label><input type="text" class="attr-assignment" /><br />
-                    <label>TRAITS: </label><input type="text" class="attr-traits" /><br /> <!-- we could have the ship and character sheet share this attribute -->
+                    <span class="sheet-label">NAME: </span><input type="text" class="attr-name"/><br />
+                    <span class="sheet-label">SPECIES: </span><input type="text" class="attr-species" />
+                    <span class="sheet-label">RANK: </span><input type="text" class="attr-rank"><br />
+                    <span class="sheet-label">ENVIRONMENT: </span><input type="text" class="attr-environment" />
+                    <span class="sheet-label">UPBRINGING: </span><input type="text" class="attr-upbringing" /><br />
+                    <span class="sheet-label">ASSIGNMENT: </span><input type="text" class="attr-assignment" /><br />
+                    <span class="sheet-label">TRAITS: </span><input type="text" class="attr-traits" /><br /> <!-- we could have the ship and character sheet share this attribute -->
                 </fieldset>
             </form>
-        </header><!-- End Character Traits Section -->
+        </div><!-- End Character Traits Section -->
         <div class="sheet-body">
             
             <!-- Attributes -->
@@ -36,24 +38,24 @@
             <table>
                 <tr>
                     <td>
-                        <label>CONTROL</label><input type="number" class="attr-control" />
+                        <span class="sheet-label">CONTROL</span><input type="number" class="attr-control" />
                     </td>
                     <td>
-                        <label>FITNESS</label><input type="number" class="attr-fitness" />
+                        <span class="sheet-label">FITNESS</span><input type="number" class="attr-fitness" />
                     </td>
                     <td>
-                        <label>PRESENCE</label><input type="number" class="attr-presence" />
+                        <span class="sheet-label">PRESENCE</span><input type="number" class="attr-presence" />
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <label>DARING</label><input type="number" class="attr-daring" />
+                        <span class="sheet-label">DARING</span><input type="number" class="attr-daring" />
                     </td>
                     <td>
-                        <label>FITNESS</label><input type="number" class="attr-insight" />
+                        <span class="sheet-label">FITNESS</span><input type="number" class="attr-insight" />
                     </td>
                     <td>
-                        <label>PRESENCE</label><input type="number" class="attr-reason" />
+                        <span class="sheet-label">PRESENCE</span><input type="number" class="attr-reason" />
                     </td>
                 </tr>
             </table>
@@ -63,24 +65,24 @@
             <table>
                 <tr>
                     <td>
-                        <label>COMMAND</label><input type="number" class="attr-command" />
+                        <span class="sheet-label">COMMAND</span><input type="number" class="attr-command" />
                     </td>
                     <td>
-                        <label>SECURITY</label><input type="number" class="attr-security" />
+                        <span class="sheet-label">SECURITY</span><input type="number" class="attr-security" />
                     </td>
                     <td>
-                        <label>SCIENCE</label><input type="number" class="attr-science" />
+                        <span class="sheet-label">SCIENCE</span><input type="number" class="attr-science" />
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <label>CONN</label><input type="number" class="attr-conn" />
+                        <span class="sheet-label">CONN</span><input type="number" class="attr-conn" />
                     </td>
                     <td>
-                        <label>ENGINEERING</label><input type="number" class="attr-engineering" />
+                        <span class="sheet-label">ENGINEERING</span><input type="number" class="attr-engineering" />
                     </td>
                     <td>
-                        <label>MEDICINE</label><input type="number" class="attr-medicine" />
+                        <span class="sheet-label">MEDICINE</span><input type="number" class="attr-medicine" />
                     </td>
                 </tr>
             </table>
@@ -96,10 +98,10 @@
             <!-- weapons (repeating section)  -->
             <h2><span>WEAPONS</span></h2>
             <fieldset class="repeating_weapons">
-                <label>NAME/TYPE</label><input type="text" class="attr-weapon-name" />
+                <span class="sheet-label">NAME/TYPE</span><input type="text" class="attr-weapon-name" />
                 <button type='roll' value="/roll @{weapon-dice}d6" name="roll-weapon-attack" value="1"></button>
                 <input type="number" class="attr-weapon-dice" /><br />
-                <label>QUALITIES</label><input type="text" class="attr-weapon-qualities" />
+                <span class="sheet-label">QUALITIES</span><input type="text" class="attr-weapon-qualities" />
             </fieldset>
             
             <!-- Beginning of the second column -->
@@ -107,14 +109,14 @@
             <!-- This is where the dice roller will be placed -->
             <div class="sheet-dice-roller">
                 <h2>DICE ROLLER</h2>
-                <label>ATTRIBUTE:</label><input type="text" class="" readonly /><br />
-                <label>DISCIPLINE:</label><input type="text" class="" readonly /><br />
-                <label>TARGET:</label><input type="text" class="" readonly /><br />
-                <label>FOCUS USED:</label>
-                <label class="sheet-focus-toggle">NO</label></label><input type="radio" name="focus-toggle" class="" value="1" checked />
-                <label class="sheet-focus-toggle">YES</label><input type="radio" name="focus-toggle" class="" value="*2" /><br />
+                <span class="sheet-label">ATTRIBUTE:</span><input type="text" class="" readonly /><br />
+                <span class="sheet-label">DISCIPLINE:</span><input type="text" class="" readonly /><br />
+                <span class="sheet-label">TARGET:</span><input type="text" class="" readonly /><br />
+                <span class="sheet-label">FOCUS USED:</span>
+                <span class="sheet-label" class="sheet-focus-toggle">NO</span></span><input type="radio" name="focus-toggle" class="" value="1" checked />
+                <span class="sheet-label" class="sheet-focus-toggle">YES</span><input type="radio" name="focus-toggle" class="" value="*2" /><br />
                 <button type='roll' value="/roll [insert formula here]" name="roll-weapon-attack" value="1"></button><br />
-                <label>COVER ROLL</label><button type='roll' value="/roll [insert formula here]" name="roll-dodge" value="1"></button>
+                <span class="sheet-label">COVER ROLL</span><button type='roll' value="/roll [insert formula here]" name="roll-dodge" value="1"></button>
             </div>
             
             <!-- Focuses -->
@@ -135,7 +137,7 @@
             <h2><span>FOCUSES</span></h2>
             <input type="text" class="attr-equipment" />
             
-        </div><!-- End of Sheet Body-->
+        </div><!-- End of Sheet Body for the Character Sheet-->
     
     </div><!-- ~~~~~~~~ End of Character Sheet Page ~~~~~~~~ -->
     
@@ -146,21 +148,21 @@
     
     
     <div class="sheet-page"><!-- This is the div class that keeps the three "pages" seperate-->
-        <!-- Character Traits Section -->
-        <header>
+        <!-- Starship Traits Section -->
+        <div class="sheet-header">
             <h1>STARSHIP REGISTRY ENTRY</h1>
             <form>
                 <fieldset>
-                    <label>NAME: </label><input type="text" class="attr-name"/><br />
-                    <label>DESIGNATION: </label><input type="text" class="attr-designation" /><br />
-                    <label>SERVICE DATE: </label><input type="text" class="attr-service-date"><br />
-                    <label>SPACE FRAME: </label><input type="text" class="attr-space-frame" /><br />
-                    <label>MISSION PROFILE: </label><input type="text" class="attr-mission-profile" /><br />
-                    <label>REFIT: </label><input type="text" class="attr-refit" /><br />
-                    <label>TRAITS: </label><input type="text" class="attr-traits" /><br /> <!-- we could have the ship and character sheet share this attribute -->
+                    <span class="sheet-label">NAME: </span><input type="text" class="attr-name"/><br />
+                    <span class="sheet-label">DESIGNATION: </span><input type="text" class="attr-designation" /><br />
+                    <span class="sheet-label">SERVICE DATE: </span><input type="text" class="attr-service-date"><br />
+                    <span class="sheet-label">SPACE FRAME: </span><input type="text" class="attr-space-frame" /><br />
+                    <span class="sheet-label">MISSION PROFILE: </span><input type="text" class="attr-mission-profile" /><br />
+                    <span class="sheet-label">REFIT: </span><input type="text" class="attr-refit" /><br />
+                    <span class="sheet-label">TRAITS: </span><input type="text" class="attr-traits" /><br /> <!-- we could have the ship and character sheet share this attribute -->
                 </fieldset>
             </form>
-        </header><!-- End Character Traits Section -->
+        </div><!-- End Starship Traits Section -->
         <div class="sheet-body">
             
             <!-- Systems -->
@@ -168,13 +170,13 @@
             <table>
                 <tr>
                     <td>
-                        <label>ENGINES</label><input type="number" class="attr-engines" />
+                        <span class="sheet-label">ENGINES</span><input type="number" class="attr-engines" />
                     </td>
                     <td>
-                        <label>COMPUTERS</label><input type="number" class="attr-computers" />
+                        <span class="sheet-label">COMPUTERS</span><input type="number" class="attr-computers" />
                     </td>
                     <td>
-                        <label>WEAPONS</label><input type="number" class="attr-system-weapons" />
+                        <span class="sheet-label">WEAPONS</span><input type="number" class="attr-system-weapons" />
                     </td>
                 </tr>
                 <tr>
@@ -208,13 +210,13 @@
                 </tr>
                 <tr>
                     <td>
-                        <label>STRUCTURE</label><input type="number" class="attr-structure" />
+                        <span class="sheet-label">STRUCTURE</span><input type="number" class="attr-structure" />
                     </td>
                     <td>
-                        <label>SENSORS</label><input type="number" class="attr-sensors" />
+                        <span class="sheet-label">SENSORS</span><input type="number" class="attr-sensors" />
                     </td>
                     <td>
-                        <label>COMMUNICATION</label><input type="number" class="attr-communication" />
+                        <span class="sheet-label">COMMUNICATION</span><input type="number" class="attr-communication" />
                     </td>
                 </tr>
                 <tr>
@@ -256,24 +258,24 @@
             <table>
                 <tr>
                     <td>
-                        <label>COMMAND</label><input type="number" class="attr-command" />
+                        <span class="sheet-label">COMMAND</span><input type="number" class="attr-command" />
                     </td>
                     <td>
-                        <label>SECURITY</label><input type="number" class="attr-security" />
+                        <span class="sheet-label">SECURITY</span><input type="number" class="attr-security" />
                     </td>
                     <td>
-                        <label>SCIENCE</label><input type="number" class="attr-science" />
+                        <span class="sheet-label">SCIENCE</span><input type="number" class="attr-science" />
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <label>CONN</label><input type="number" class="attr-conn" />
+                        <span class="sheet-label">CONN</span><input type="number" class="attr-conn" />
                     </td>
                     <td>
-                        <label>ENGINEERING</label><input type="number" class="attr-engineering" />
+                        <span class="sheet-label">ENGINEERING</span><input type="number" class="attr-engineering" />
                     </td>
                     <td>
-                        <label>MEDICINE</label><input type="number" class="attr-medicine" />
+                        <span class="sheet-label">MEDICINE</span><input type="number" class="attr-medicine" />
                     </td>
                 </tr>
             </table>
@@ -285,12 +287,12 @@
                 <table>
                     <tr>
                         <td>
-                            <label>SCALE</label><input type="number" class="attr-scale" />
+                            <span class="sheet-label">SCALE</span><input type="number" class="attr-scale" />
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <label>RESISTANCE</label><input type="number" class="attr-resistance" />
+                            <span class="sheet-label">RESISTANCE</span><input type="number" class="attr-resistance" />
                         </td>
                     </tr>
                 </table>
@@ -304,14 +306,14 @@
             <!-- This is where the dice roller will be placed -->
             <div class="sheet-dice-roller">
                 <h2>DICE ROLLER</h2>
-                <label>SYSTEM:</label><input type="text" class="" readonly /><br />
-                <label>DEPARTMENT:</label><input type="text" class="" readonly /><br />
-                <label>TARGET:</label><input type="text" class="" readonly /><br />
-                <label>TALENT USED:</label>
-                <label class="sheet-focus-toggle">NO</label></label><input type="radio" name="focus-toggle" class="" value="1" checked />
-                <label class="sheet-focus-toggle">YES</label><input type="radio" name="focus-toggle" class="" value="*2" /><br />
+                <span class="sheet-label">SYSTEM:</span><input type="text" class="" readonly /><br />
+                <span class="sheet-label">DEPARTMENT:</span><input type="text" class="" readonly /><br />
+                <span class="sheet-label">TARGET:</span><input type="text" class="" readonly /><br />
+                <span class="sheet-label">TALENT USED:</span>
+                <span class="sheet-label" class="sheet-focus-toggle">NO</span></span><input type="radio" name="focus-toggle" class="" value="1" checked />
+                <span class="sheet-label" class="sheet-focus-toggle">YES</span><input type="radio" name="focus-toggle" class="" value="*2" /><br />
                 <button type='roll' value="/roll [insert formula here]" name="roll-weapon-attack" value="1"></button><br />
-                <label>MANOUVER ROLL</label><button type='roll' value="/roll [insert formula here]" name="roll-dodge" value="1"></button>
+                <span class="sheet-label">MANOUVER ROLL</span><button type='roll' value="/roll [insert formula here]" name="roll-dodge" value="1"></button>
             </div>
             
             
@@ -320,10 +322,10 @@
             <table>
                 <tr>
                     <td>
-                        <label>CURRENT</label><input type="number" class="attr-power" />
+                        <span class="sheet-label">CURRENT</span><input type="number" class="attr-power" />
                     </td>
                     <td>
-                        <label>TOTAL</label><input type="number" class="attr-power-max" />
+                        <span class="sheet-label">TOTAL</span><input type="number" class="attr-power-max" />
                     </td>
                     <td>
                 </tr>
@@ -344,10 +346,10 @@
             <table>
                 <tr>
                     <td>
-                        <label>CURRENT</label><input type="number" class="attr-crew-support" />
+                        <span class="sheet-label">CURRENT</span><input type="number" class="attr-crew-support" />
                     </td>
                     <td>
-                        <label>TOTAL</label><input type="number" class="attr-crew-support-max" />
+                        <span class="sheet-label">TOTAL</span><input type="number" class="attr-crew-support-max" />
                     </td>
                     <td>
                 </tr>
@@ -356,14 +358,14 @@
             <!-- weapons (repeating section that mirrors the attributes section on the character sheet)  -->
             <h2><span>WEAPONS</span></h2>
             <fieldset class="repeating_weapons">
-                <label>NAME/TYPE</label><input type="text" class="attr-weapon-name" />
+                <span class="sheet-label">NAME/TYPE</span><input type="text" class="attr-weapon-name" />
                 <button type='roll' value="/roll @{weapon-dice}d6" name="roll-weapon-attack" value="1"></button>
                 <input type="number" class="attr-weapon-dice" /><br />
-                <label>QUALITIES</label><input type="text" class="attr-weapon-qualities" />
+                <span class="sheet-label">QUALITIES</span><input type="text" class="attr-weapon-qualities" />
             </fieldset>
             
-        </div><!-- End of Sheet Body-->
-       
+        </div><!-- End of Sheet Body for Star Ship Sheet-->
+    </div><!-- End of Sheet Page for Star Ship Sheet-->   
     
     
     <hr />
@@ -383,21 +385,20 @@
         3. ....
     As the sheet begins to make shape, we can figure out what else needs to be here.-->
     
-        <div class="sheet-header"><!-- If we Need a header for Sheet Settings-->
-        </div>
+        <div class="sheet-header"><!-- If we Need a div class="sheet-header" for Sheet Settings-->
             <h1>SHEET SETTINGS</h1>
             <form>
-                    <fieldset>
-                        <label>SETTING1: </label><input type="text" /><br />
-                        <label>SETTING2: </label><input type="text" /><br />
-                        <label>SETTING3: </label><input type="text" /><br />
-                        <label>SETTING4: </label><input type="text" /><br />
-                    </fieldset>
-                </form>
-        </div><!-- End Sheet Settings header Section -->
+                <fieldset>
+                    <span class="sheet-label">SETTING1: </span><input type="text" /><br />
+                    <span class="sheet-label">SETTING2: </span><input type="text" /><br />
+                    <span class="sheet-label">SETTING3: </span><input type="text" /><br />
+                    <span class="sheet-label">SETTING4: </span><input type="text" /><br />
+                </fieldset>
+            </form>
+        </div><!-- End Sheet Settings Header Section -->
         <div class="sheet-body"><!-- If we Need a body for Sheet Settings-->
             
-        </div>
+        </div><!-- End Sheet Settings Body Section -->
     </div><!--  ~~~~~~~~ End Sheet Settings Page ~~~~~~~~ -->
        
     
@@ -406,7 +407,7 @@
     
     
     
-    <footer>
+    <div class="sheet-footer">
         <p>&trade; &amp; &copy; 2017 CBS Studios Inc. STAR TREK and related marks and logos are trademarks of CBS Studios Inc. All Rights Reserved.</p>
-    </footer>
+    </div><!--  ~~~~~~~~ End Sheet Footer ~~~~~~~~ -->
 </div><!--   ~~~~~~~~ End of sheet-content-container ~~~~~~~~ -->

@@ -1,6 +1,33 @@
-/*Bootstrap has some existing styling that auto treats labels as block elements */
-label {
-    display:inline !important;
-}
+/* ~~~~~~~~~ Star Trek: Adventures - Official Sheet by Roll20 CSS File ~~~~~~~~~ */
 
-/* TEST!~ */
+/*   Basic Rules    */
+
+    /* --- Fonts --- 
+    Everything in the CS is written in the font "Helvetica-UltraCompressed.otf" 
+    with the exception of the copyright info which is set in regular "Helvetica Neue" */
+    
+    .sheet-content-container {
+        font-family:"Helvetica-UltraCompressed", "Helvetica", Arial, sans-serif;
+        letter-spacing:1.5px;
+    }
+    
+    h2 {
+        font-size:2em;
+    }
+    
+    .sheet-label {
+        font-size:1.5em;
+    }
+    
+    .sheet-footer p {
+        font-family:"Helvetica", Arial, sans-serif;
+        font-size:.75em;
+        text-align:center;
+    }
+
+
+/*   Container Rules   */
+
+
+
+/*   Styling the Dice Roller   */
