@@ -1,19 +1,22 @@
 /* ~~~~~~~~~ Star Trek: Adventures - Official Sheet by Roll20 CSS File ~~~~~~~~~ */
 
 /*   Basic Rules    */
+    /* Border-Box and fonts*/
+    * {
+        box-sizing: border-box;
+        font-family:"Helvetica-UltraCompressed", "Helvetica", Arial, sans-serif;
+        /*background:rgb(0,19,35);  This is the dark-blue-black backdrop*/
+    }
 
     /* --- Fonts --- 
     Everything in the CS is written in the font "Helvetica-UltraCompressed.otf" 
-    with the exception of the copyright info which is set in regular "Helvetica Neue" */
+    with the exception of the copyright info which is set in regular "Helvetica Neue" 
     
-    .sheet-content-container {
-        font-family:"Helvetica-UltraCompressed", "Helvetica", Arial, sans-serif;
-        letter-spacing:1.5px;
-    }
+    Though, after seeing this font in action, the font is REALLY hard to read.
+    The font I found to install was a freebie, so maybe the publisher is using a different
+    version that's easier to read. As is, it's really awful. If you have the font installed
+    on your local machine, you'll see what I mean.*/
     
-    h2 {
-        font-size:2em;
-    }
     
     .sheet-label {
         font-size:1.5em;
@@ -23,11 +26,118 @@
         font-family:"Helvetica", Arial, sans-serif;
         font-size:.75em;
         text-align:center;
+        color:rgb(150,118,169);
+    }
+
+    /* --- Colors --- */
+    /* For reference:
+        -Original TNG Design Colors-
+        Background Dark Blue/Near Black:rgb(0,19,35) 
+        Heading Sections Dark Purple: rgb(245,157,8)
+        Heading Sections Orange: rgb(163,64,113)
+        Attributes Medium Purple: rgb(150,118,169)
+        Determination and Input Borders Light Purple: rgb(195,188,222)
+        Weapons Pink: rgb(225,134,183) */
+
+/*   Container Rules   */
+    /* Border and Column Proportions */
+    /* Playing around in Photoshop the border/column proportions of TNG version works roughly to:
+        Left Border | Gutter | 1st Column | Gutter | 2nd Column | Right Border (white space)
+        18%             4%          40%         4%      30%         4%
+        I cut the right border considerably and we can, in theory, shave off more from the right border
+        since there's nothing actually there beyond white space on the physical character sheet.
+    */
+    
+    /* Attribute Tables */
+    table { /* I have this set to 40%, because that's what the container will likely be in width in the end */
+        width:40%;
     }
 
 
-/*   Container Rules   */
+/*   Common Element Rules   */
+    
+    /* --- Heading Labels and Inputs --- */
+    .sheet-header-label,
+    .sheet-header-label + input[type=text] {
+        display:inline-block;
+        font-size:2em;
+        letter-spacing:1px;
+        color:rgb(150,118,169);
+        width:20%;
+        margin-bottom:.25em;
+        vertical-align:middle;
+    }
+    
+    .sheet-header-label + input[type=text] {
+        width:80%;
+        letter-spacing:2px;
+        border-radius:0;
+        background-color: white;
+        border: none;
+        border-bottom: 2px solid rgb(195,188,222);
+    }
+        
 
+    /* --- Section Heading Dividers --- */
+    .sheet-section-heading {
+        display:block;
+        font-size:2em;
+        letter-spacing:1px;
+        color:black;
+        background-color:rgb(245,157,8);
+        width:100%;
+        margin:.5em 0;
+        border-radius:2em;
+    }
+    
+    .sheet-section-heading span {
+        display:inline-block;
+        color:rgb(163,64,113);
+        background-color:white;
+        margin-left:.5em;
+        padding:0 5px;
+        vertical-align:top;
+    }
+    
+    /* --- Label Capsule Halves --- */
+    .sheet-label-capsule-left {
+        color:white;
+        display:inline-block;
+        font-size:1.25em;
+        width:70%;
+        letter-spacing:.1em;
+        text-align:right;
+        padding:.25em .10em .4em 0;
+        background-color:rgb(150,118,169);
+        vertical-align:middle;
+        border-radius:1.75em 0 0 1.75em;
+    }
+    
+    /* --- Input Capsule Halves --- */
+    input.sheet-capsule {
+        color:rgb(150,118,169);
+        text-align:center;
+        border:none;
+        vertical-align:middle;
+    }    
+    
+    .sheet-input-capsule-right {
+        display:inline-block;
+        font-size:1.25em;
+        width:20%;
+        text-align:left;
+        background-color:white;
+        vertical-align:middle;
+        margin:0 .20em 0 .20em;
+        border: 2px solid rgb(150,118,169);
+        border-radius:0 1.75em 1.75em 0;
+    }
+    
+    /* --- Multi-line Text Inputs --- */
+    .sheet-multi-line {
+        display:block;
+        width:100%;
+    }
 
 
 /*   Styling the Dice Roller   */
